@@ -4,8 +4,8 @@ public class dbConnect {
         //public String url = "localhost";
         public String url = "172.16.20.180";
         public String port = "3306"; //8889
-        public String database = "test";
-        public String user = "admin";
+        public String database = "hacklnjava";
+        public String user = "admin";//root at home
         public String password = "stcs";//root
         public String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         Connection conn = null;
@@ -43,5 +43,16 @@ public class dbConnect {
         }
         return dbstmt;
     }
+    public void closeDB()
+    {
+        try {
+            conn.close();
+            System.out.println("Connection closed");
+        }
 
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
